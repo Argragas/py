@@ -1,6 +1,9 @@
 
 
-def my_function():
-    print("pouet")
+def my_function(num1,num2):
+    return num1+num2
 
-my_function()
+
+print(my_function(5, 5))
+
+
