@@ -21,7 +21,7 @@ class Person:
 		self.atk = atk
 		self.df = df
 		self.magic = magic
-		self.atkmin = atk -10
+		self.atkmin = atk - 10
 		self.atakmax = atk + 10
 		self.actions = ["Attack", "Magic"]
 		
@@ -38,4 +38,41 @@ class Person:
 		if self.hp < 0:
 			self.hp = 0
 		return self.hp
+		
+	def get_hp(self):
+		return self.hp
+	
+	def get_maxhp(self):
+	   return self.max_hp
+	
+	def get_mp(self):
+	   return self.mp
+	
+	def get_maxmp(self):
+	   return self.max_mp
+	
+	def reduce_mp(self, cost):
+	   self.mp -= cost
+	
+	def get_spellname(self, i):
+	   return self.magic[i]["name"]
+	
+	def get_spellcost(self, i):
+	   return self.magic[i]["cost"]
+	   
+	def choose_action(self):
+	   print("Actions :")
+	   i = 1
+	   for item in self.actions:
+	       print(str(i), ":", item)
+	       i += 1
+    
+    def choose_magic(self):
+         print("Magic :")
+          i = 1
+	     for spell in self.magic:
+	       print(str(i), ":", spell["name"], "(cost :",str(spell["mp"]),")")
+	       i += 1
+	    
+
 
