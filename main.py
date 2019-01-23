@@ -14,6 +14,17 @@ print(bcolors.FAIL + bcolors.BOLD + "AN ENEMY ATTAKS !" + bcolors.ENDC)
 
 
 while running:
-    print("pouet")
+    print("===================")
     player.choose_action()
+    choice = input("Choose action :")
+    index = int(choice) - 1
+    print("You chose", choice)
+     
+    if index == 0:
+        dmg = 0
+        player.generate_damage()
+        enemy.take_damage(dmg)
+        print("You attacked for", dmg, "points of damage. Enemy HP :", enemy.get_hp())
+        
     running = False
+
