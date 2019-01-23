@@ -18,6 +18,7 @@ class Person:
 		self.hp = hp
 		self.hpmax = hp
 		self.mp = mp
+		self.max_mp = mp
 		self.atk = atk
 		self.df = df
 		self.magic = magic
@@ -45,8 +46,8 @@ class Person:
 
 	def heal(self, dmg):
 	   self.hp += dmg
-	   if self.hp > self.max_hp:
-	       self.hp = self.max_hp
+	   if self.hp > self.hpmax:
+	       self.hp = self.hpmax
 
 
 	def get_hp(self):
@@ -54,7 +55,7 @@ class Person:
 
 
 	def get_maxhp(self):
-	   return self.max_hp
+	   return self.hpmax
 
 
 	def get_mp(self):
