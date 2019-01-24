@@ -42,8 +42,13 @@ while running:
             continue
         else:
             player.reduce_mp(spell.cost)
-            enemy.take_damage(magicdmg)
-            print(bcolors.OKBLUE + spell.name, " deals" + str(magicdmg), " points of damage" + bcolors.ENDC)
+            
+            if spell.type == "White":
+                player.heal(magicdmg)
+                print(bcolors.OKGREEN + spell.name, "heals for", dmg, bcolors.ENDC)
+            else:
+               enemy.take_damage(magicdmg)
+               print(bcolors.OKBLUE + spell.name, " deals" + str(magicdmg), " points of damage" + bcolors.ENDC)
             
     enemy_choice = 1
     enemydmg = enemy.generate_damage()

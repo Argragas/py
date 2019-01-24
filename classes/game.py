@@ -1,5 +1,6 @@
 import random
 import pprint
+from .magic import Spell
 
 
 class bcolors:
